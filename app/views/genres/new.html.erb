@@ -1,0 +1,20 @@
+<h1>Registro de gênero</h1>
+
+<% if flash[:notice]%>
+	<div>
+	<%= flash[:notice]%>
+	</div>
+<%end%>
+
+<%= form_with model: @genre do | f | %>
+
+  <div>
+    <%= f.label :name, 'Nome' %>
+    <%= f.text_field :name %>
+  </div>
+
+	<div>
+		<%= f.submit 'Salvar' %>
+	</div>
+
+<%end%>   
