@@ -11,7 +11,23 @@
   </head>
 
   <body>
-    <%= link_to 'home', root_path %>
+    <h1>FilmCatalog</h1>
+    <nav>
+      <ul>
+        <li>
+          <%= link_to 'Home', root_path %>
+        </li>
+
+        <li>
+          <%= link_to 'Gêneros', genres_path %>
+        </li>
+
+        <li>
+          <%= link_to 'Directores', directors_path %>
+        </li>
+      </ul>
+      
+    </nav>
     <%= yield %>
 
     

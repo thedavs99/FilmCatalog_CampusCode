@@ -10,7 +10,6 @@ class DirectorsController < ApplicationController
                         last_name: params[:director][:last_name],
                         birth_day: params[:director][:birth_day]    
     )
-  
       
     if @director.save
       flash[:notice] = 'informações foram salvas com sucesso!'

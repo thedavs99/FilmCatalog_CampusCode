@@ -1,5 +1,8 @@
 class GenresController < ApplicationController
 
+  def index
+    @genres = Genre.all
+  end
   def new
     @genre = Genre.new
   end
@@ -16,4 +19,21 @@ class GenresController < ApplicationController
     render :new
   end
 
+  def show
+    @genre = Genre.find(params[:id])
+  end
+  
+  def edit
+    @genre = Genre.find(params[:id])
+  end
+
+  def update
+    @genre = Genre.find(params[:id])
+
+    if @genre.update(name: params[:genre][:name])
+      return redirect_to genre_path(params[:id])
+    end
+    render :edit
+  end
+  
 end
