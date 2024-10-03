@@ -4,8 +4,17 @@
         <strong>Nome: </strong><%= @director.name + ' ' + @director.last_name %>
         
     </dt>
+
     <dd>
         <strong>Nascimento: </strong><%= @director.birth_day.to_date %>
+    </dd>
+
+    <dd>
+        <strong>Pais: </strong><%= @director.country %>
+    </dd>
+
+    <dd>
+        <strong>Gênero favorito: </strong><%= @director.genre.name %>
     </dd>
  </dl>  
 

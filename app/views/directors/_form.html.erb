@@ -11,15 +11,25 @@
     <%= f.text_field :name %>
   </div>
 
-    <div>
+  <div>
     <%= f.label 'Sobrenome' %>
     <%= f.text_field :last_name %>
-    </div>
+  </div>
 
-    <div>
+  <div>
     <%= f.label 'Nascimento' %>
     <%= f.date_field :birth_day %>
-    </div>
+  </div>
+
+  <div>
+    <%= f.label 'Pais' %>
+    <%= f.text_field :country %>
+  </div>
+
+  <div>
+    <%= f.label 'Gênero favorito' %>
+    <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+  </div>
 
 	<div>
 		<%= f.submit 'Salvar' %>

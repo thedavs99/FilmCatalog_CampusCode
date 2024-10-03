@@ -11,9 +11,10 @@ class MoviesController < ApplicationController
                         title: params[:movie][:title],
                         release_year: params[:movie][:release_year],
                         director_id: params[:movie][:director_id],
-                        language: params[:movie][:language],
+                        sypnosis: params[:movie][:sypnosis],
                         country: params[:movie][:country], 
-                        genre_id: params[:movie][:genre_id],)
+                        genre_id: params[:movie][:genre_id],
+                        running_time: params[:movie][:running_time])
       
     if @movie.save
       flash[:notice] = 'informações foram salvas com sucesso!'
@@ -38,9 +39,10 @@ class MoviesController < ApplicationController
                   title: params[:movie][:title],
                   release_year: params[:movie][:release_year],
                   director_id: params[:movie][:director_id],
-                  language: params[:movie][:language],
+                  sypnosis: params[:movie][:sypnosis],
                   country: params[:movie][:country], 
-                  genre_id: params[:movie][:genre_id])
+                  genre_id: params[:movie][:genre_id],
+                  running_time: params[:movie][:running_time])
                       
       return redirect_to movie_path(params[:id])
     end

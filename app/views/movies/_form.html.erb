@@ -11,33 +11,40 @@
     <%= f.text_field :title %>
   </div>
 
-    <div>
+  <div>
     <%= f.label 'Ano de lançamento' %>
-    <%= f.number_field :release_year, min: 1900, max: Date.today.year%>
-    </div>
+    <%= f.number_field :release_year, min: 1000%>
+  </div>
 
-    <div>
+  <div>
     <%= f.label 'Diretor' %>
     <%= f.collection_select :director_id, Director.all, :id, lambda { |d| "#{d.name} #{d.last_name}"} %>
-    </div>
+  </div>
 
-    <div>
-    <%= f.label 'Idioma' %>
-    <%= f.text_field :language %>
-    </div>
-
-    <div>
+  <div>
     <%= f.label 'Pais' %>
     <%= f.text_field :country %>
-    </div>
+  </div>
 
-    <div>
+  <div>
     <%= f.label 'Gênero' %>
     <%= f.collection_select :genre_id, Genre.all, :id, :name %>
-    </div>
+  </div>
+
+  <div>
+    <%= f.label 'duração' %>
+    <%= f.number_field :running_time %>
+  </div>
+
+  <div>
+    <%= f.label 'Sipnose' %>
+    <%= f.text_area :sypnosis %>
+  </div>
 
 	<div>
 		<%= f.submit 'Salvar' %>
 	</div>
+
+
 
 <%end%>   
