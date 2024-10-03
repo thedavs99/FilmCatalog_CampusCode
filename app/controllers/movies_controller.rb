@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+    @movies_released = Movie.where("release_date < :min", min: Date.today)
+    @movies_to_release = Movie.where("release_date > :min", min: Date.today)
   end
   def new
     @movie = Movie.new
@@ -9,7 +10,7 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.new(
                         title: params[:movie][:title],
-                        release_year: params[:movie][:release_year],
+                        release_date: params[:movie][:release_date],
                         director_id: params[:movie][:director_id],
                         sypnosis: params[:movie][:sypnosis],
                         country: params[:movie][:country], 
@@ -37,7 +38,7 @@ class MoviesController < ApplicationController
 
     if @movie.update(
                   title: params[:movie][:title],
-                  release_year: params[:movie][:release_year],
+                  release_date: params[:movie][:release_date],
                   director_id: params[:movie][:director_id],
                   sypnosis: params[:movie][:sypnosis],
                   country: params[:movie][:country], 
