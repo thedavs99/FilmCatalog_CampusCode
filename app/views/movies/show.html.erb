@@ -14,7 +14,7 @@
     </dd>
 
     <dd>
-        <strong>Duração: </strong><%= @movie.running_time %>
+        <strong>Duração: </strong><%= @movie.running_time %> min
     </dd>
 
     <dd>
@@ -28,4 +28,14 @@
     <dd>
         <strong>Sipnose: </strong><%= @movie.sypnosis %>
     </dd>
- </dl>  
+
+</dl>  
+
+<p>
+  <% if @movie.status == "published" %>
+  <%= button_to 'colocar em rascunho', draft_movie_path, {method: 'patch'} %> 
+  <% else %>
+    <%= button_to 'publicar', publish_movie_path, {method: 'patch'} %> 
+  <% end %>
+     
+</p>

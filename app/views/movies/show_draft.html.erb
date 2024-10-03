@@ -1,6 +1,7 @@
-<h2>Filmes recentemente lançados</h2>
+<h2>Filmes</h2>  
 
 <ul>
+    <h3>Filmes em rascunho</h3>
 <% @movies.each do | movie | %>   
     <li> <%= link_to "#{movie.title} ", movie%> |
         <%= movie.release_date.year %>

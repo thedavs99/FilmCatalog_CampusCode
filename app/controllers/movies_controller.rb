@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   def index
-    @movies_released = Movie.where("release_date < :min", min: Date.today)
-    @movies_to_release = Movie.where("release_date > :min", min: Date.today)
+    @movies_released = Movie.published.where("release_date < :min", min: Date.today)
+    @movies_to_release = Movie.published.where("release_date > :min", min: Date.today)
   end
   def new
     @movie = Movie.new
@@ -48,5 +48,23 @@ class MoviesController < ApplicationController
       return redirect_to movie_path(params[:id])
     end
     render :edit
+  end
+
+  def publish
+    @movie = Movie.find(params[:id])
+    @movie.published!
+
+    return redirect_to movie_path(params[:id])
+  end
+
+  def draft
+    @movie = Movie.find(params[:id])
+    @movie.draft!
+
+    return redirect_to movie_path(params[:id])
+  end
+
+  def show_draft
+    @movies = Movie.draft
   end
 end
