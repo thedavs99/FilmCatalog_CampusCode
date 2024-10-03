@@ -7,17 +7,17 @@
 <%= form_with model: @director do | f | %>
 
   <div>
-    <%= f.label :name, 'Nome' %>
+    <%= f.label 'Nome' %>
     <%= f.text_field :name %>
   </div>
 
     <div>
-    <%= f.label :last_name, 'Sobrenome' %>
+    <%= f.label 'Sobrenome' %>
     <%= f.text_field :last_name %>
     </div>
 
     <div>
-    <%= f.label :birth_day, 'Nascimento' %>
+    <%= f.label 'Nascimento' %>
     <%= f.date_field :birth_day %>
     </div>
 

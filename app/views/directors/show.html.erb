@@ -4,7 +4,15 @@
         <strong>Nome: </strong><%= @director.name + ' ' + @director.last_name %>
         
     </dt>
-    <dt>
+    <dd>
         <strong>Nascimento: </strong><%= @director.birth_day.to_date %>
-    </dt>
+    </dd>
  </dl>  
+
+<ul>
+<% @movies.each do | movie | %>   
+    <li> <%= link_to "#{movie.title} ", movie%> |
+        <%= movie.release_year %>
+    </li> 
+<% end %>
+</ul>

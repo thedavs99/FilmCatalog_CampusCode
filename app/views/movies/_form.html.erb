@@ -1,0 +1,43 @@
+<% if flash[:notice]%>
+	<div>
+	<%= flash[:notice]%>
+	</div>
+<%end%>
+
+<%= form_with model: @movie do | f | %>
+
+  <div>
+    <%= f.label 'Titulo' %>
+    <%= f.text_field :title %>
+  </div>
+
+    <div>
+    <%= f.label 'Ano de lançamento' %>
+    <%= f.number_field :release_year, min: 1900, max: Date.today.year%>
+    </div>
+
+    <div>
+    <%= f.label 'Diretor' %>
+    <%= f.collection_select :director_id, Director.all, :id, lambda { |d| "#{d.name} #{d.last_name}"} %>
+    </div>
+
+    <div>
+    <%= f.label 'Idioma' %>
+    <%= f.text_field :language %>
+    </div>
+
+    <div>
+    <%= f.label 'Pais' %>
+    <%= f.text_field :country %>
+    </div>
+
+    <div>
+    <%= f.label 'Gênero' %>
+    <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+    </div>
+
+	<div>
+		<%= f.submit 'Salvar' %>
+	</div>
+
+<%end%>   

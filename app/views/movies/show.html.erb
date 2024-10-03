@@ -1,0 +1,27 @@
+<p><%= link_to 'Editar', edit_movie_path %></p>
+
+<dl> 
+    <dt>
+        <strong>Title: </strong><%= @movie.title %>
+    </dt>
+
+    <dd>
+        <strong>Ano de lançamento: </strong><%= @movie.release_year %>
+    </dd>
+
+    <dd>
+        <strong>Diretor: </strong><%= "#{@movie.director.name} #{@movie.director.last_name}" %>
+    </dd>
+
+    <dd>
+        <strong>Idioma: </strong><%= @movie.language %>
+    </dd>
+
+    <dd>
+        <strong>Pais: </strong><%= @movie.country %>
+    </dd>
+
+    <dd>
+        <strong>Gênero: </strong><%= @movie.genre.name %>
+    </dd>
+ </dl>  

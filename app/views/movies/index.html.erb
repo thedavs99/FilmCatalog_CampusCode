@@ -1,4 +1,4 @@
-<h2>Welcome to <strong>FilmCatalog</strong></h2>
+<h2>Filmes</h2>  
 
 <ul>
 <% @movies.each do | movie | %>   
@@ -7,3 +7,5 @@
     </li> 
 <% end %>
 </ul>
+
+<%= link_to 'Cadastrar Film', new_movie_path %> 

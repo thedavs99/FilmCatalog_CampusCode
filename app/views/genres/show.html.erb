@@ -4,4 +4,13 @@
     <dt>
         <strong>Nome: </strong><%= @genre.name %>
     </dt>
- </dl>  
+
+ </dl>
+
+<ul>
+<% @movies.each do | movie | %>   
+  <li> <%= link_to "#{movie.title} ", movie%> |
+    <%= movie.release_year %>
+  </li> 
+<% end %>
+</ul>  
