@@ -4,13 +4,8 @@
     <dt>
         <strong>Nome: </strong><%= @genre.name %>
     </dt>
-
  </dl>
 
 <ul>
-<% @movies.each do | movie | %>   
-  <li> <%= link_to "#{movie.title} ", movie%> |
-    <%= movie.release_date.year %>
-  </li> 
-<% end %>
+<%= render partial: 'movies/movies', locals: {movies: @movies} %>
 </ul>  

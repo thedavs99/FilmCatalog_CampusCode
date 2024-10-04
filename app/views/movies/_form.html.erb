@@ -4,8 +4,7 @@
 	</div>
 <%end%>
 
-<%= form_with model: @movie do | f | %>
-
+<%= form_with model: movie do | f | %>
   <div>
     <%= f.label 'Titulo' %>
     <%= f.text_field :title %>
@@ -41,10 +40,12 @@
     <%= f.text_area :sypnosis %>
   </div>
 
+  <div>
+    <%= f.label 'Poster' %>
+    <%= f.file_field :poster %>
+  </div>
+
 	<div>
 		<%= f.submit 'Salvar' %>
 	</div>
-
-
-
 <%end%>   

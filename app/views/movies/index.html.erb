@@ -1,22 +1,14 @@
 <h2>Filmes</h2>  
 
-<ul>
-    <h3>Filmes lançados</h3>
-<% @movies_released.each do | movie | %>   
-    <li> <%= link_to "#{movie.title} ", movie%> |
-        <%= movie.release_date.year %>
-    </li> 
-<% end %>
-</ul>
+<%= link_to 'Films em rascunho', show_draft_movies_path %> 
 
 <ul>
-    <h3>Filmes a ser lançados</h3>
-<% @movies_to_release.each do | movie | %>   
-    <li> <%= link_to "#{movie.title} ", movie%> |
-        <%= movie.release_date.year %>
-    </li> 
-<% end %>
+   <%= render partial: 'movies', locals: {movies: @movies_released} %>
+</ul>
+
+<h3>Filmes a serem lançados</h3>
+<ul>
+   <%= render partial: 'movies', locals: {movies: @movies_to_release} %>
 </ul>
 
 <%= link_to 'Cadastrar Film', new_movie_path %> 
-<%= link_to 'Films em rascunho', show_draft_movies_path %> 

@@ -19,9 +19,5 @@
  </dl>  
 
 <ul>
-<% @movies.each do | movie | %>   
-    <li> <%= link_to "#{movie.title} ", movie%> |
-        <%= movie.release_date.year %>
-    </li> 
-<% end %>
-</ul>
+<%= render partial: 'movies/movies', locals: {movies: @movies} %>
+</ul>  

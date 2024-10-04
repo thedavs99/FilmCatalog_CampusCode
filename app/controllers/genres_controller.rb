@@ -21,7 +21,7 @@ class GenresController < ApplicationController
 
   def show
     @genre = Genre.find(params[:id])
-    @movies = Movie.where(genre_id: @genre.id)
+    @movies = Movie.published.where(genre_id: @genre.id)
   end
   
   def edit

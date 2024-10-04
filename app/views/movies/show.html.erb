@@ -1,41 +1,46 @@
 <p><%= link_to 'Editar', edit_movie_path %></p>
 
 <dl> 
-    <dt>
-        <strong>Title: </strong><%= @movie.title %>
-    </dt>
+  <dt>
+    <% if @movie.poster.attached? %>
+      <img src="<%= url_for(@movie.poster) %>" alt="Postêr">
+    <% end %>
+  </dt>
 
-    <dd>
-        <strong>Ano de lançamento: </strong><%= @movie.release_date.year %>
-    </dd>
+  <dt>
+    <strong>Title: </strong><%= @movie.title %>
+  </dt>
 
-    <dd>
-        <strong>Diretor: </strong><%= "#{@movie.director.name} #{@movie.director.last_name}" %>
-    </dd>
+  <dd>
+    <strong>Ano de lançamento: </strong><%= @movie.release_date.year %>
+  </dd>
 
-    <dd>
-        <strong>Duração: </strong><%= @movie.running_time %> min
-    </dd>
+  <dd>
+    <strong>Diretor: </strong><%= "#{@movie.director.name} #{@movie.director.last_name}" %>
+  </dd>
 
-    <dd>
-        <strong>Pais: </strong><%= @movie.country %>
-    </dd>
+  <dd>
+    <strong>Duração: </strong><%= @movie.running_time %> min
+  </dd>
 
-    <dd>
-        <strong>Gênero: </strong><%= @movie.genre.name %>
-    </dd>
+  <dd>
+    <strong>Pais: </strong><%= @movie.country %>
+  </dd>
 
-    <dd>
-        <strong>Sipnose: </strong><%= @movie.sypnosis %>
-    </dd>
+  <dd>
+    <strong>Gênero: </strong><%= @movie.genre.name %>
+  </dd>
+
+  <dd>
+    <strong>Sipnose: </strong><%= @movie.sypnosis %>
+  </dd>
 
 </dl>  
 
 <p>
   <% if @movie.status == "published" %>
-  <%= button_to 'colocar em rascunho', draft_movie_path, {method: 'patch'} %> 
+    <%= button_to 'colocar em rascunho', draft_movie_path, {method: 'patch'} %> 
   <% else %>
     <%= button_to 'publicar', publish_movie_path, {method: 'patch'} %> 
   <% end %>
-     
 </p>

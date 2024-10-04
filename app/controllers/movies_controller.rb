@@ -8,6 +8,7 @@ class MoviesController < ApplicationController
   end
 
   def create
+
     @movie = Movie.new(
                         title: params[:movie][:title],
                         release_date: params[:movie][:release_date],
@@ -16,6 +17,8 @@ class MoviesController < ApplicationController
                         country: params[:movie][:country], 
                         genre_id: params[:movie][:genre_id],
                         running_time: params[:movie][:running_time])
+                        
+    @movie.poster.attach(params[:movie][:poster]) 
       
     if @movie.save
       flash[:notice] = 'informações foram salvas com sucesso!'
@@ -30,7 +33,7 @@ class MoviesController < ApplicationController
   end
   
   def edit
-    @movie = Movie.find(params[:id])
+    @movie = Movie.find(params[:id])        
   end
 
   def update
@@ -44,7 +47,9 @@ class MoviesController < ApplicationController
                   country: params[:movie][:country], 
                   genre_id: params[:movie][:genre_id],
                   running_time: params[:movie][:running_time])
-                      
+      if params[:movie][:poster].present?
+        @movie.poster.attach(params[:movie][:poster])         
+      end         
       return redirect_to movie_path(params[:id])
     end
     render :edit
