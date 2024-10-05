@@ -1,14 +1,15 @@
 <% movies.each do | movie | %>   
   <li> 
     <dl>
-      <dt>
+      <dt id="Poster">
         <% if movie.poster.attached? %>
           <img src="<%= url_for(movie.poster) %>" alt="Postêr">
         <% end %>
       </dt>
 
       <dt>
-        <%= link_to "#{movie.title} ", movie%> | <%= movie.release_date.year %>
+        <%= link_to "#{movie.title} ", movie%> <br />
+        <%= movie.release_date.year %>
       </dt>
     </dl>
   </li> 

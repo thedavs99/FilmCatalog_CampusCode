@@ -1,5 +1,3 @@
-<p><%= link_to 'Editar', edit_movie_path %></p>
-
 <dl> 
   <dt>
     <% if @movie.poster.attached? %>
@@ -37,10 +35,10 @@
 
 </dl>  
 
-<p>
-  <% if @movie.status == "published" %>
+ <p><%= link_to 'Editar', edit_movie_path %></p>
+
+ <% if @movie.status == "published" %>
     <%= button_to 'colocar em rascunho', draft_movie_path, {method: 'patch'} %> 
   <% else %>
     <%= button_to 'publicar', publish_movie_path, {method: 'patch'} %> 
   <% end %>
-</p>

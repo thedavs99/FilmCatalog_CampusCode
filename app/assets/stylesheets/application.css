@@ -13,3 +13,171 @@
  *= require_tree .
  *= require_self
  */
+ body {
+    background-color: #111
+ }
+
+ *{
+    margin: 0;
+    padding: 0;
+    font-family:  Arial, Helvetica, sans-serif;
+    color: white;
+ }
+
+ #title{
+    background-color: cornflowerblue;
+    color: beige; 
+    position: center;
+    
+    padding: 10px;
+}
+
+nav {
+    background-color: #111;
+    border: 1px solid white;
+  }
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+nav ul li {
+    float: left;
+    border: 0px solid #111;
+  }
+  
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+ nav ul li a:hover {
+    background-color: #111;
+  }
+  
+
+
+h2 {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+h3{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#second_menu {
+    background-color: #111;
+    border: 1px solid white;
+  }
+
+#second_menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+#second_menu ul li {
+    float: left;
+    border: 0px solid #111;
+  }
+  
+#second_menu ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 5px 16px;
+    text-decoration: none;
+  }
+
+#second_menu ul li a:hover {
+    background-color: #111;
+  }
+
+ul {
+    list-style: none;
+    margin-top: 10px;
+    padding: 5px;
+    display: flex;
+}
+
+ul li{
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+    border: 2px solid cornflowerblue;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+ul li dt{
+  border: 0;
+}
+
+#Poster img { 
+   width: 100% ; 
+}
+
+form input {
+ 
+ 
+  color: black;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+form div select { 
+  color: black;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+dl {
+  align-items: center;
+  list-style: none;
+  margin-top: 10px;
+  padding: 5px;
+  display: block;
+}
+
+dl dt{
+  text-align: center;
+  border: 2px solid cornflowerblue;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+dl dd {
+  text-align: center;
+
+  border: 2px solid cornflowerblue;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+dl dt img {
+  width: 10%;
+}

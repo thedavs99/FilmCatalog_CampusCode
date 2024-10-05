@@ -1,11 +1,24 @@
-<h2>Diretores</h2>  
+<nav id="second_menu">
+  <ul>
+    <li>
+      <%= link_to 'Cadastrar Diretor', new_director_path %>  
+    </li>
+  </ul>
+</nav>
 
+<h2>Diretores</h2>
+
+
+
+<div>
 <ul>
 <% @directors.each do | director | %>   
-    <li> <%= link_to "#{director.name} #{director.last_name}", director%> |
-        <%= link_to 'Editar', edit_director_path(director) %>
-    </li> 
+  <li> <%= link_to "#{director.name} #{director.last_name}", director%> |
+    <%= link_to 'Editar', edit_director_path(director) %>
+  </li> 
 <% end %>
 </ul>
 
-<%= link_to 'Cadastrar Diretor', new_director_path %> 
+</div>
+
+

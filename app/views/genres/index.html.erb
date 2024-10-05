@@ -1,11 +1,21 @@
+<nav id="second_menu">
+  <ul>
+    <li>
+      <%= link_to 'Cadastrar Gênero', new_genre_path %> 
+    </li>
+  </ul>
+</nav>
+
 <h2>Gêneros</h2>  
 
-<ul>
-<% @genres.each do | genre | %>   
-    <li> <%= link_to genre.name, genre%> |
-        <%= link_to 'Editar', edit_genre_path(genre) %>
-    </li> 
-<% end %>
-</ul>
 
-<%= link_to 'Cadastrar Gênero', new_genre_path %> 
+
+<div>
+  <ul>
+  <% @genres.each do | genre | %>   
+    <li> <%= link_to genre.name, genre%> |
+      <%= link_to 'Editar', edit_genre_path(genre) %>
+    </li> 
+  <% end %>
+  </ul>
+</div>

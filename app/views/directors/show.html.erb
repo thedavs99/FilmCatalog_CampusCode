@@ -1,10 +1,6 @@
-<p><%= link_to 'Editar', edit_director_path %></p>
-<dl> 
-    <dt>
-        <strong>Nome: </strong><%= @director.name + ' ' + @director.last_name %>
-        
-    </dt>
 
+<h2><%= @director.name + ' ' + @director.last_name %></h2>
+<dl> 
     <dd>
         <strong>Nascimento: </strong><%= @director.birth_day.to_date %>
     </dd>
@@ -16,8 +12,13 @@
     <dd>
         <strong>Gênero favorito: </strong><%= @director.genre.name %>
     </dd>
- </dl>  
+ </dl> 
+
+ <p><%= link_to 'Editar', edit_director_path %></p>
+
+ <h3>Filmes</h3>
 
 <ul>
 <%= render partial: 'movies/movies', locals: {movies: @movies} %>
 </ul>  
+

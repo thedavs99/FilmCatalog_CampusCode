@@ -1,11 +1,7 @@
-<p><%= link_to 'Editar', edit_genre_path %></p>
-
-<dl> 
-    <dt>
-        <strong>Nome: </strong><%= @genre.name %>
-    </dt>
- </dl>
+<h2><strong><%= @genre.name %></strong></h2>    
 
 <ul>
 <%= render partial: 'movies/movies', locals: {movies: @movies} %>
 </ul>  
+
+<p><%= link_to 'Editar', edit_genre_path %></p>
